@@ -16,12 +16,13 @@ body {
 }
 
 #header-utama {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
   width: 100%;
   background-color: #263b73;
-  border-bottom: 4px solid #f39c12;
+}
+
+#header-utama .profil-wrapper {
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .profil-wrapper {
@@ -39,7 +40,6 @@ body {
   width: 175px;
   height: 175px;
   object-fit: cover;
-  border-radius: 10px;
 }
 
 .profil-wrapper h1 {
@@ -52,6 +52,28 @@ body {
   margin: 0;
   color: #f39c12;
   font-size: 18px;
+  font-family: 'Times New Roman';
+}
+
+.header-copy {
+  flex: 1;
+  text-align: center;
+}
+
+.header-copy h1 {
+  margin: 0 0 5px;
+  color: #ffffff;
+  font-size: 38px;
+}
+
+.header-copy p {
+  margin: 0;
+  color: #f39c12;
+  font-size: 18px;
+}
+
+.cv-profile {
+  min-height: 145px;
 }
 
 #about h1 {
@@ -71,7 +93,14 @@ body {
   font-weight: bold;
 }
 
+#about h2 {
+  color: #f39c12;
+}
+
 .menu-navigasi {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   width: 100%;
   max-width: none;
   min-height: 70px;
@@ -82,16 +111,19 @@ body {
   align-items: center;
   gap: 5px;
   background-color: #263b73;
+  border-bottom: 4px solid #f39c12;
 }
 
 .menu-navigasi a {
   display: block;
+  flex: 0 0 auto;
   padding: 14px 22px;
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
   font-size: 15px;
   border-radius: 5px;
+  text-align: center;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
@@ -101,7 +133,7 @@ body {
 }
 
 .menu-navigasi a.more {
-  margin-left: 10px;
+  margin-left: 0;
   background-color: #f39c12;
   color: #ffffff;
 }
@@ -179,8 +211,9 @@ section h2::after {
 .project-container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(3, minmax(220px, 280px));
+  justify-content: center;
+  gap: 18px;
 }
 
 .project-card {
@@ -214,46 +247,57 @@ section h2::after {
   transition: filter 0.25s ease, transform 0.25s ease;
 }
 
+.project-card > img {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
 .project-image:hover img {
   filter: brightness(65%);
   transform: scale(1.03);
 }
 
 .project-card-content {
-  padding: 22px;
+  padding: 15px;
 }
 
 .project-card h3 {
-  margin-bottom: 10px;
+  margin: 8px 0;
   color: #121631;
-  font-size: 23px;
+  font-size: 19px;
   text-align: center;
 }
 
 .project-card p {
   color: #121631;
-  font-size: 15px;
+  font-size: 13px;
   text-align: center;
 }
 
-#contact {
+#contact,
+#kontak {
   padding: 70px 20px;
   text-align: center;
 }
 
-#contact h2 {
+#contact h2,
+#kontak h2 {
   color: #f39c12;
 }
 
-#contact p {
+#contact > p,
+#kontak > p {
   max-width: 700px;
+  margin: 0 auto 40px;
   font-size: 18px;
   color: #fefdfd;
   text-align: center;
-  margin-bottom: 30px;
 }
 
-#contact form {
+#contact form,
+#kontak form {
   width: 100%;
   max-width: 700px;
   margin: 0 auto;
@@ -262,14 +306,6 @@ section h2::after {
   border-radius: 10px;
   border: 1px solid #dddddd;
   text-align: left;
-}
-
-#contact > p {
-  max-width: 850px;
-  margin: 0 auto 40px;
-  text-align: center;
-  color: #ffffff;
-  font-size: 18px;
 }
 
 .form-group {
@@ -299,7 +335,8 @@ section h2::after {
   border-color: #f39c12;
 }
 
-#contact button {
+#contact button,
+#kontak button {
   width: 100%;
   padding: 13px;
   border: none;
@@ -313,7 +350,8 @@ section h2::after {
   transition: background-color 0.25s ease;
 }
 
-#contact button:hover {
+#contact button:hover,
+#kontak button:hover {
   background-color: #f1c40f;
   color: #333333;
 }
@@ -331,16 +369,46 @@ footer {
   color: #ffffff;
 }
 
+#track-record > *,
+#pendidikan > *,
+#erigo > * {
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #track-record h2 {
   color: #f39c12;
 }
 
 #track-record h3 {
   color: #f1c40f;
+  margin: 30px auto 12px;
+  text-align: center;
 }
 
 #track-record p, #track-record li {
   color: #ffffff;
+}
+
+#track-record p,
+#pendidikan p,
+#erigo p {
+  max-width: 850px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+#track-record ul,
+#track-record ol,
+#erigo ul {
+  padding-left: 24px;
+  margin-bottom: 22px;
+}
+
+#track-record li,
+#erigo li {
+  margin-bottom: 6px;
 }
 
 #track-record table {
@@ -362,7 +430,12 @@ footer {
 #track-record td {
   padding: 12px 15px;
   border: 1px solid #4b5578;
-  text-align: left;
+  text-align: center;
+}
+
+#track-record table,
+#pendidikan table {
+  margin: 20px auto 28px;
 }
 
 #pendidikan {
@@ -376,6 +449,12 @@ footer {
 
 #pendidikan p {
   color: #ffffff;
+}
+
+#pendidikan h2,
+#erigo h2,
+#kontak h2 {
+  margin-bottom: 35px;
 }
 
 #pendidikan th {
@@ -392,7 +471,12 @@ footer {
 #pendidikan td {
   padding: 12px 15px;
   border: 1px solid #4b5578;
-  text-align: left;
+  text-align: center;
+}
+
+#pendidikan table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
 #erigo {
@@ -417,38 +501,40 @@ footer {
   color: #f1c40f;
 }
 
+#erigo h3 {
+  margin: 30px auto 12px;
+  color: #f1c40f;
+  text-align: center;
+}
+
+.daftar-produk {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 16px 0 28px;
+}
+
+.produk {
+  padding: 8px 14px;
+  border: 1px solid #f39c12;
+  border-radius: 5px;
+  background-color: #263b73;
+  color: #ffffff;
+  font-weight: bold;
+}
+
 #kontak {
-  background-color: #151a38;
+  background-color: #121631;
   color: #ffffff;
-  text-align: center;
-}
-
-#kontak h2 {
-  color: #f39c12;
-}
-
-#kontak > p {
-  color: #ffffff;
-  text-align: center;
-}
-
-#kontak form {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
 }
 
 #kontak label {
-  color: #ffffff;
+  color: #121631;
 }
 
-#kontak button {
-  background-color: #f39c12;
-}
-
-#kontak button:hover {
-  background-color: #f1c40f;
-  color: #333333;
+main > hr {
+  display: none;
 }
 
 @media (max-width: 600px) {
@@ -468,7 +554,7 @@ footer {
 
 @media (max-width: 900px) {
   .project-container {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(220px, 280px));
   }
 
   .menu-navigasi a {
@@ -481,16 +567,29 @@ footer {
     padding: 20px;
   }
 
-  .profil-wrapper h1 {
+  .header-copy h1 {
     font-size: 32px;
   }
 
   .menu-navigasi a {
     padding: 13px 16px;
   }
+
 }
 
 @media (max-width: 600px) {
+  .project-container {
+    grid-template-columns: minmax(0, 280px);
+  }
+
+  .header-copy h1 {
+    font-size: 24px;
+  }
+
+  .header-copy p {
+    font-size: 15px;
+  }
+
   .profil-wrapper {
     padding: 20px 15px;
     gap: 15px;
@@ -501,11 +600,11 @@ footer {
     height: 90px;
   }
 
-  .profil-wrapper h1 {
+  .header-copy h1 {
     font-size: 24px;
   }
 
-  .profil-wrapper p {
+  .header-copy p {
     font-size: 15px;
   }
 
@@ -521,7 +620,7 @@ footer {
   }
 
   .menu-navigasi a.more {
-    margin-left: 2px;
+    margin-left: 0;
   }
 }
 
@@ -531,11 +630,11 @@ footer {
     height: 75px;
   }
 
-  .profil-wrapper h1 {
+  .header-copy h1 {
     font-size: 20px;
   }
 
-  .profil-wrapper p {
+  .header-copy p {
     font-size: 13px;
   }
 
